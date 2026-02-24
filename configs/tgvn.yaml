@@ -1,6 +1,6 @@
 # Model configuration
 model:
-  model_type: tgvn
+  model_type: ltgvn
   num_cascades: 12
   sens_chans: 24
   Phi_chans: 50
