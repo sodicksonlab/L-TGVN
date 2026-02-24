@@ -181,7 +181,7 @@ class LTGVNLightning(L.LightningModule):
             checkpoint['wandb_run_id'] = self.logger.experiment.id  # type: ignore  # noqa: E501
 
     def forward(self, *args, **kwargs):
-        # Generic pass-through so both VN and TGVN signatures work
+        # Generic pass-through so both VN and L-TGVN signatures work
         return self.model(*args, **kwargs)
 
     def training_step(self, batch, batch_idx):
