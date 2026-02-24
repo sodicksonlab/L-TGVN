@@ -11,11 +11,11 @@ from lightning.pytorch.loggers import WandbLogger
 from torch.optim import Adam, AdamW
 from omegaconf import OmegaConf
 from typing import Optional
-from src.models import VN, TGVN
+from src.models import VN, LTGVN
 from src.loss import (
     SSIMLoss, EASSIMLoss, EAL1Loss, ValMetrics
 )
-from src.pl_data_module import TGVNDataModule
+from src.pl_data_module import LTGVNDataModule
 
 
 # Suppress irrelevant warnings
@@ -105,10 +105,10 @@ class LinearWarmupExponentialDecayScheduler:
         self._step = state_dict['_step']
 
 
-class TGVNLightning(L.LightningModule):
+class LTGVNLightning(L.LightningModule):
     def __init__(
         self,
-        model_type: str = 'TGVN',
+        model_type: str = 'LTGVN',
         num_cascades: int = 12,
         sens_chans: int = 18,
         Phi_chans: int = 25,
@@ -127,8 +127,8 @@ class TGVNLightning(L.LightningModule):
         self.lr_gamma = lr_gamma
         self.warmup_epochs = warmup_epochs
         self.weight_decay = weight_decay
-        if self.model_type == 'TGVN':
-            self.model = TGVN(
+        if self.model_type == 'LTGVN':
+            self.model = LTGVN(
                 num_cascades=num_cascades,
                 sens_chans=sens_chans,
                 Phi_chans=Phi_chans,
@@ -199,7 +199,7 @@ class TGVNLightning(L.LightningModule):
             sync_dist=True, batch_size=target.shape[0]
         )
 
-        if self.model_type == 'TGVN':
+        if self.model_type == 'LTGVN':
             pred = self.model(
                 kspace, mask, prior, recon_size
 
@@ -251,7 +251,7 @@ class TGVNLightning(L.LightningModule):
             sync_dist=True, batch_size=target.shape[0]
         )
 
-        if self.model_type == 'TGVN':
+        if self.model_type == 'LTGVN':
             pred = self.model(
                 kspace, mask, prior, recon_size
 
@@ -294,7 +294,7 @@ class TGVNLightning(L.LightningModule):
             sync_dist=True, batch_size=target.shape[0]
         )
 
-        if self.model_type == 'TGVN':
+        if self.model_type == 'LTGVN':
             pred = self.model(
                 kspace, mask, prior, recon_size
 
@@ -410,7 +410,7 @@ def main():
         print("Configuration:")
         print(OmegaConf.to_yaml(config))
 
-    data_module = TGVNDataModule(
+    data_module = LTGVNDataModule(
         train_batch_size=config.data.train_batch_size,
         val_batch_size=config.data.val_batch_size,
         workers=config.data.num_workers,
@@ -419,7 +419,7 @@ def main():
         center_fraction=config.data.center_fraction,
     )
 
-    model = TGVNLightning(
+    model = LTGVNLightning(
         model_type=config.model.model_type,
         num_cascades=config.model.num_cascades,
         sens_chans=config.model.sens_chans,
