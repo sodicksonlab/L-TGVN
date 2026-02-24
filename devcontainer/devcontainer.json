@@ -1,0 +1,33 @@
+{
+    "name": "L-TGVN Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "runArgs": [
+        "--gpus=all",
+        "--shm-size=128g"
+    ],
+    //"mounts": [
+    //    "source=/path/to/data,target=/data/brain,type=bind"
+    //],
+    "containerEnv": {
+        "PYTHONPATH": "/workspaces/L-TGVN/src"
+    },
+    "postCreateCommand": "pip install -e .",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.flake8"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/bin/python3",
+                "python.formatting.provider": "black",
+                "python.linting.flake8Enabled": true
+            }
+        }
+    },
+    "remoteUser": "root"
+}
