@@ -1,0 +1,54 @@
+# Model configuration
+model:
+  model_type: tgvn
+  num_cascades: 12
+  sens_chans: 24
+  Phi_chans: 50
+  H_chans: 50
+
+# Optimization configuration
+optimization:
+  learning_rate: 6e-4
+  lr_gamma: 0.98
+  warmup_epochs: 1
+  weight_decay: 1e-3
+
+# Data configuration
+data:
+  train_batch_size: 1
+  val_batch_size: 1
+  num_workers: 4
+  buffer_size: 11
+  target_acceleration: 20
+  center_fraction: 0.5
+  
+# Training configuration
+training:
+  max_epochs: 100
+  accumulate_grad_batches: 8
+  log_every_n_steps: 20
+  loss_function: ssim
+  
+# Checkpoint configuration
+checkpoint:
+  dirpath: /gpfs/data/longitudinalprostatelab/checkpoints
+  save_top_k: 5
+  every_n_epochs: 1
+  save_on_train_epoch_end: true
+  resume_from: null
+  monitor: "val_ssim"
+  mode: "max"
+
+# Logger
+logger:
+  project: BrainLongitudinal
+  entity: arda-atalik
+  name: tgvn-20x-502M
+  save_dir: wandb_logs
+
+# Hardware configuration
+hardware:
+  accelerator: gpu
+  devices: 2
+  strategy: ddp
+  num_nodes: 4
