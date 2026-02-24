@@ -6,9 +6,9 @@ from .data import SliceDataset, LTGVNDataTransform, collate_fn
 class LTGVNDataModule(L.LightningDataModule):
     def __init__(
         self,
-        train_csv: str = "./csv_files/train.csv",
-        val_csv: str = "./csv_files/val.csv",
-        test_csv: str = "./csv_files/test.csv",
+        train_csv: str = "/provide/training/csv/file",
+        val_csv: str = "/provide/validation/csv/file",
+        test_csv: str = "/provide/test/csv/file",
         train_batch_size: int = 1,
         val_batch_size: int = 1,
         test_batch_size: int = 1,
