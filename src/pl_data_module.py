@@ -1,9 +1,9 @@
 import lightning as L
 from torch.utils.data import DataLoader
-from .data import SliceDataset, TGVNDataTransform, collate_fn
+from .data import SliceDataset, LTGVNDataTransform, collate_fn
 
 
-class TGVNDataModule(L.LightningDataModule):
+class LTGVNDataModule(L.LightningDataModule):
     def __init__(
         self,
         train_csv: str = "./csv_files/train.csv",
@@ -28,19 +28,19 @@ class TGVNDataModule(L.LightningDataModule):
         self.buffer_size = buffer_size
         self.target_acceleration = target_acceleration
         self.center_fraction = center_fraction
-        self.train_transform = TGVNDataTransform(
+        self.train_transform = LTGVNDataTransform(
             buffer_size=self.buffer_size,
             acceleration=self.target_acceleration,
             center_fraction=self.center_fraction,
             randomize_mask=True
         )
-        self.val_transform = TGVNDataTransform(
+        self.val_transform = LTGVNDataTransform(
             buffer_size=self.buffer_size,
             acceleration=self.target_acceleration,
             center_fraction=self.center_fraction,
             randomize_mask=False
         )
-        self.test_transform = TGVNDataTransform(
+        self.test_transform = LTGVNDataTransform(
             buffer_size=self.buffer_size,
             acceleration=self.target_acceleration,
             center_fraction=self.center_fraction,
