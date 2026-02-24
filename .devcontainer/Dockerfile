@@ -37,6 +37,8 @@ RUN python -m pip install --no-cache-dir \
       omegaconf \
       lightning \
       torchmetrics \
+      flake8 \
+      black \
       wandb
 
 # ---- app ----
