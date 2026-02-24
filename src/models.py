@@ -627,9 +627,9 @@ class VNBlock(nn.Module):
         return x - dc - refine
 
 
-class TGVNBlock(nn.Module):
+class LTGVNBlock(nn.Module):
     """
-    Model block for trust-guided variational network reconstruction.
+    Model block for longitudinal trust-guided variational network.
     """
     def __init__(self, model_ref: nn.Module, model_tg: nn.Module):
         """
@@ -737,9 +737,10 @@ class VN(nn.Module):
         return center_crop(image_pred.abs(), recon_size)
 
 
-class TGVN(nn.Module):
+class LTGVN(nn.Module):
     """
-    Trust-Guided Variational Network model implemented in image domain
+    Longitudinal Trust-Guided Variational Network 
+    model implemented in image domain
     """
     def __init__(
         self,
@@ -764,7 +765,7 @@ class TGVN(nn.Module):
         self.sens_net = SensitivityModel(sens_chans, sens_pools)
         self.cascades = nn.ModuleList(
             [
-                TGVNBlock(
+                LTGVNBlock(
                     Phi(Phi_chans, pools),
                     H(H_chans, pools)
                 ) for _ in range(num_cascades)
