@@ -10,7 +10,7 @@ We prepared our in-house data as slice-by-slice `.npz` files containing the k-sp
 
 The repo follows the standard layout, and the devcontainer installs the TGVN package automatically with `pip install -e .`. If you prefer to install the requirements with pip or conda instead of using a Docker container, install the packages listed in lines 27–41 of the `Dockerfile` and then run `pip install -e .` from the repo root.
 
-We provided the configuration files used for training L-TGVN in `configs` directory.
+We provide the configuration files used for training L-TGVN in `configs` directory.
 
 ### Core Code Files
 - **`scripts/main.py`**: Main script for training and evaluating L-TGVN.
