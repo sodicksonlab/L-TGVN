@@ -1,5 +1,5 @@
 # L-TGVN
-Longitudinal MR Image Reconstruction
+Longitudinal MR Image Reconstruction with deep learning
 
 ## Project Repository Overview
 This repository contains code and scripts for training and validating Longitudinal Trust Guided Variational Network (L-TGVN). The codebase utilizes PyTorch and Lightning. 
