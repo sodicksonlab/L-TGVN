@@ -11,7 +11,7 @@ The repo follows the standard layout, and the devcontainer installs the TGVN pac
 ### Core Code Files
 - **`scripts/main.py`**: Main script for training and evaluating L-TGVN.
 - **`src/tgvn/data.py`**: Contains data loading and preprocessing logic.
-- **`src/tgvn/loss.py`**: Implements various loss function for training models.
+- **`src/tgvn/loss.py`**: Implements various loss functions for training models.
 - **`src/math_utils.py`**: Implements core mathematical operations.
 - **`src/tgvn/models.py`**: Defines the L-TGVN architecture used in the project.
 - **`src/pl_data_module.py`**: Lightning data wrapper.
