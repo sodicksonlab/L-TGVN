@@ -6,6 +6,8 @@ This repository contains code and scripts for training and validating Longitudin
 
 For convenience, a devcontainer that supports CUDA acceleration (CUDA 12.8) was added. Before building the container, you might want to update the `devcontainer.json` to access your data inside the container. You can do so by uncommenting the `mounts` key and adding the data paths. 
 
+We prepared our in-house data as slice-by-slice `.npz` files containing the k-space and the target, but this can easily be modified in `data.py`. 
+
 The repo follows the standard layout, and the devcontainer installs the TGVN package automatically with `pip install -e .`. If you prefer to install the requirements with pip or conda instead of using a Docker container, install the packages listed in lines 33–40 of the `Dockerfile` and then run `pip install -e .` from the repo root.
 
 ### Core Code Files
