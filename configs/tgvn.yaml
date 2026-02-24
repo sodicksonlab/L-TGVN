@@ -31,7 +31,7 @@ training:
   
 # Checkpoint configuration
 checkpoint:
-  dirpath: /gpfs/data/longitudinalprostatelab/checkpoints
+  dirpath: # provide the checkpoint path
   save_top_k: 5
   every_n_epochs: 1
   save_on_train_epoch_end: true
@@ -41,9 +41,9 @@ checkpoint:
 
 # Logger
 logger:
-  project: BrainLongitudinal
-  entity: arda-atalik
-  name: tgvn-20x-502M
+  project: # Give a name to the project
+  entity: # Your wandb identity
+  name: # Name of the run
   save_dir: wandb_logs
 
 # Hardware configuration
