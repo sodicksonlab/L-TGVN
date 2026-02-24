@@ -25,7 +25,7 @@ class VarNetSample:
 
 class SliceDataset(torch.utils.data.Dataset):
     """
-    Dataset for TGVN training.
+    Dataset for L-TGVN training.
     """
     def __init__(
         self,
@@ -34,7 +34,7 @@ class SliceDataset(torch.utils.data.Dataset):
     ) -> None:
         self.transform = transform
         self.csv = pd.read_csv(csv_path)
-        self.npz_path = '/gpfs/data/longitudinalprostatelab/npz'
+        self.npz_path = '/provide/default/path/to/npz/files'
 
     def __len__(self) -> int:
         return len(self.csv)
@@ -69,7 +69,7 @@ class SliceDataset(torch.utils.data.Dataset):
         )
 
 
-class TGVNDataTransform:
+class LTGVNDataTransform:
     def __init__(
         self,
         buffer_size: int = 11,
