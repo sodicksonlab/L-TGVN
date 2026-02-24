@@ -39,7 +39,7 @@ class EdgeAwareLoss(nn.Module):
         Args:
             eps (float): Small value to avoid division by zero.
             crop (bool): Whether to center crop input before computing loss.
-            If true, crops to (60, 60) which most likely contain prostate.
+            If true, crops to (60, 60): modify these numbers based on the anatomy.
         """
         super().__init__()
         self.sobel = SobelFilter(eps=eps)
