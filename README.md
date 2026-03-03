@@ -13,8 +13,8 @@ We provide the configuration files used for training L-TGVN in `configs` directo
 
 ### Core Code Files
 - **`scripts/main.py`**: Main script for training and evaluating L-TGVN.
-- **`src/tgvn/data.py`**: Contains data loading and preprocessing logic.
-- **`src/tgvn/loss.py`**: Implements various loss functions for training models.
+- **`src/data.py`**: Contains data loading and preprocessing logic.
+- **`src/loss.py`**: Implements various loss functions for training models.
 - **`src/math_utils.py`**: Implements core mathematical operations.
-- **`src/tgvn/models.py`**: Defines the L-TGVN architecture used in the project.
+- **`src/models.py`**: Defines the L-TGVN architecture used in the project.
 - **`src/pl_data_module.py`**: Lightning data wrapper.
