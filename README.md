@@ -1,4 +1,4 @@
-# L-TGVN: Longitudinal MR Image Reconstruction with Deep Learning [![MICCAI 2026](https://img.shields.io/badge/MICCAI-2026-blue)](#citation) 
+# L-TGVN: Leveraging Longitudinal Priors for Personalized Rapid MRI [![MICCAI 2026](https://img.shields.io/badge/MICCAI-2026-blue)](#citation) 
 ## Project Repository Overview
 This repository contains code and scripts for training and validating Longitudinal Trust Guided Variational Network (L-TGVN). The codebase utilizes PyTorch and Lightning. 
 
