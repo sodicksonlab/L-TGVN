@@ -5,7 +5,7 @@
 > - (Sept 30, 2026) L-TGVN was named **runner-up for the Best Paper Award** at *MICCAI 2026* 🎉  
 > - (Aug 7, 2026) Our paper was selected for an **oral presentation** at *MICCAI 2026* 🎉  
 > - (May 7, 2026) Our paper **_“L-TGVN: Leveraging Longitudinal Priors for Personalized Rapid MRI”_** was **early-accepted at *MICCAI 2026*** (top 9%) 🎉  
-> - (May 7, 2026) A patent application has been filed covering the work described in this publication.
+> - (May 7, 2026) A patent application was filed covering the work described in this publication.
 
 ## Project Repository Overview
 This repository contains code and scripts for training and validating Longitudinal Trust Guided Variational Network (L-TGVN). The codebase utilizes PyTorch and Lightning. 
