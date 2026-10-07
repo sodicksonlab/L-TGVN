@@ -1,4 +1,12 @@
 # L-TGVN: Leveraging Longitudinal Priors for Personalized Rapid MRI [![MICCAI 2026](https://img.shields.io/badge/MICCAI-2026-blue)](#citation) 
+© 2026 New York University
+
+> **News**
+> - (Sept 30, 2026) L-TGVN was named **runner-up for the Best Paper Award** at *MICCAI 2026* 🎉  
+> - (Aug 7, 2026) Our paper was selected for an **oral presentation** at *MICCAI 2026* 🎉  
+> - (May 7, 2026) Our paper **_“L-TGVN: Leveraging Longitudinal Priors for Personalized Rapid MRI”_** was **early-accepted at *MICCAI 2026*** (top 9%) 🎉  
+> - (May 7, 2026) A patent application has been filed covering the work described in this publication.
+
 ## Project Repository Overview
 This repository contains code and scripts for training and validating Longitudinal Trust Guided Variational Network (L-TGVN). The codebase utilizes PyTorch and Lightning. 
 
@@ -17,3 +25,26 @@ We provide the configuration files used for training L-TGVN in `configs` directo
 - **`src/math_utils.py`**: Implements core mathematical operations.
 - **`src/models.py`**: Defines the L-TGVN architecture used in the project.
 - **`src/pl_data_module.py`**: Lightning data wrapper.
+
+## Citation
+If you use this codebase or find it helpful in your research, please cite:
+
+> A. Atalık, S. Chopra, and D. K. Sodickson,
+"L-TGVN: Leveraging Longitudinal Priors for Personalized Rapid MRI,"
+in *Medical Image Computing and Computer Assisted Intervention – MICCAI 2026*,
+Lecture Notes in Computer Science, vol. 16887. Springer, Cham, 2027.
+>
+> [![DOI:10.1007/978-3-032-38172-9_35](https://zenodo.org/badge/DOI/10.1007/978-3-032-38172-9_35.svg)](https://doi.org/10.1007/978-3-032-38172-9_35)
+
+```bibtex
+@inproceedings{atalik2027ltgvn,
+  author    = {Atal{\i}k, Arda and Chopra, Sumit and Sodickson, Daniel K.},
+  title     = {{L-TGVN}: Leveraging Longitudinal Priors for Personalized Rapid {MRI}},
+  booktitle = {Medical Image Computing and Computer Assisted Intervention -- MICCAI 2026},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16887},
+  publisher = {Springer, Cham},
+  year      = {2027},
+  doi       = {10.1007/978-3-032-38172-9_35}
+}
+```
