@@ -7,6 +7,12 @@
 > - (May 7, 2026) Our paper **_“L-TGVN: Leveraging Longitudinal Priors for Personalized Rapid MRI”_** was **early-accepted at *MICCAI 2026*** (top 9%) 🎉  
 > - (May 7, 2026) A patent application was filed covering the work described in this publication.
 
+## Conventional vs. Context-Aware Reconstruction
+<p align="center">
+  <img src="assets/overview.jpg" width="100%" alt="Conventional vs. context-aware reconstruction">
+</p>
+<p align="center"><em>Conventional reconstruction uses only the current measurements; context-aware reconstruction also uses patient-specific context. L-TGVN uses prior MRI scans; EHR and other imaging are shown as future directions.</em></p>
+
 ## Project Repository Overview
 This repository contains code and scripts for training and validating Longitudinal Trust Guided Variational Network (L-TGVN). The codebase utilizes PyTorch and Lightning. 
 
@@ -25,6 +31,12 @@ We provide the configuration files used for training L-TGVN in `configs` directo
 - **`src/math_utils.py`**: Implements core mathematical operations.
 - **`src/models.py`**: Defines the L-TGVN architecture used in the project.
 - **`src/pl_data_module.py`**: Lightning data wrapper.
+
+## Example Results
+<p align="center">
+  <img src="assets/recon.png" width="100%" alt="Reconstruction examples: E2E-VarNet vs. L-TGVN">
+</p>
+<p align="center"><em>Two example cases at </em>R = 20×<em> (1D undersampling along a single phase-encoding direction). Green boxes mark the zoomed regions. Red contours outline the lesion visible in the fully sampled target: L-TGVN recovers it, while E2E-VarNet misses it. The E2E-VarNet baseline has a matched parameter count but no access to the longitudinal prior.</em></p>
 
 ## Citation
 If you use this codebase or find it helpful in your research, please cite:
